@@ -22,13 +22,13 @@
 ##### EurekaServer充当注册中心的角色
 ##### EurekaServer高可用配置
 ## cloud-gateway 服务网关
-##### 将Zuul注册到服务注册中心,实现对服务的映射
-##### Zuul通过Ribbon的反向代理(负载均衡配置),类似于nginx
+##### 将Zuul注册到服务注册中心,可实现对服务的映射
 ##### Zuul的过滤器实现我们对外服务的安全控制
         * pre：在请求被路由之前调用
         * routing：在路由请求时候被调用
         * post：在routing和error过滤器之后被调用
         * error：处理请求时发生错误时被调用
+##### Zuul过滤器之后,路由给Ribbon的反向代理(负载均衡)配置,类似于nginx的功能,ribbon的配置参考ribbon-simple.properties
 # spring cloud项目框架整理
 >spring cloud
 >> spring cloud netflix Netflix公司一系列开源产品的包装
