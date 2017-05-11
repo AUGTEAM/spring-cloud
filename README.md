@@ -24,10 +24,11 @@
 ## cloud-gateway 服务网关
 ##### 将Zuul注册到服务注册中心,可实现对服务的映射
 ##### Zuul的过滤器实现我们对外服务的安全控制
-        * pre：在请求被路由之前调用
-        * routing：在路由请求时候被调用
-        * post：在routing和error过滤器之后被调用
+        * pre：在请求被路由之前调用,比如身份验证，在集群中选择请求的Origin Server，记log等
+        * routing：在路由请求时候被调用,发送给Origin Server的用户请求在这类过滤器中build
+        * post：在routing和error过滤器之后被调用,比如在返回的response上面加response header，做各种统计等。并在该过滤器中把response返回给客户
         * error：处理请求时发生错误时被调用
+        * 客户定制：比如我们可以定制一种STATIC类型的过滤器，用来模拟生成返回给客户的response
 ##### Zuul过滤器之后,路由给Ribbon的反向代理(负载均衡)配置,类似于nginx的功能,ribbon的配置参考ribbon-simple.properties
 # spring cloud项目框架整理
 >spring cloud
