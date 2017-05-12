@@ -2,6 +2,17 @@
 ##### spring boot以及spring cloud的demo以及简单总结介绍
 ##### 更多介绍请参考官方文档: http://projects.spring.io/spring-cloud
 ##### spring cloud 中文网: https://springcloud.cc/
+## spring boot
+##### 为了简化产品及的spring应用和服务,简化了配置文件,使用嵌入式web服务器,诸多开箱即用的微服务功能
+##### 4大特性:auto-configuration(零配置),starters(简化依赖),cli(Command Line Interface 快速构建),actuator(应用自省,监控,统计)
+## spring cloud
+##### 微服务架构,轻松实现分布式的服务架构.提供了分布式系统的
+##### 配置管理(Spring Cloud Config)
+##### 服务发现(Eureka)
+##### 断路器(Hystrix)
+##### 智能路由(Zuul)
+##### 控制总线(Spring Cloud Bus)等等开发工具包
+##### 和spring boot无缝衔接到一起.拥有spring boot的一切特性.
 # modules 介绍
 ## boot-demo spring boot简单案例
 ##### 包括模板引擎、datasource、JPA、swagger2的使用。轻松简单的构建web应用
