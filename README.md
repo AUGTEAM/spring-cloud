@@ -41,6 +41,12 @@
         * error：处理请求时发生错误时被调用
         * 客户定制：比如我们可以定制一种STATIC类型的过滤器，用来模拟生成返回给客户的response
 ##### Zuul过滤器之后,路由给Ribbon的反向代理(负载均衡)配置,类似于nginx的功能,ribbon的配置参考ribbon-simple.properties
+## cloud-hystrix-dashboard Hystrix监控台
+##### 使用Hystrix应用,需要配置/hystrix.stream,是一个servlet
+##### 针对单个/hystrix.stream的监控,调试
+## cloud-hystrix-turbine hystrix.stream聚合
+##### turbine.stream是hystrix.stream的聚合,可以扩展为监控集群
+##### 需要一个Hystrix监控台来呈现
 # spring cloud项目框架整理
 >spring cloud
 >> spring cloud netflix Netflix公司一系列开源产品的包装
