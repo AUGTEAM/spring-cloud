@@ -3,7 +3,7 @@
 ##### 更多介绍请参考官方文档: http://projects.spring.io/spring-cloud
 ##### spring cloud 中文网: https://springcloud.cc/
 ## spring boot
-##### 为了简化产品及的spring应用和服务,简化了配置文件,使用嵌入式web服务器,诸多开箱即用的微服务功能
+##### 为了简化产品级的spring应用和服务,简化了配置文件,使用嵌入式web服务器,诸多开箱即用的微服务功能
 ##### 4大特性:auto-configuration(零配置),starters(简化依赖),cli(Command Line Interface 快速构建),actuator(应用自省,监控,统计)
 ## spring cloud
 ##### 微服务架构,轻松实现分布式的服务架构.提供了分布式系统的
