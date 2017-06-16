@@ -1,15 +1,15 @@
-package com.yinhai.domain;
+package com.yinhai.entity;
 
 import javax.persistence.*;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.domain
+ * Package com.yinhai.entity
  * Created by 刘惠涛 on 2017/5/5.
  */
 @Entity()
 @Table(name = "user")
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue()
     private Long id;
@@ -44,7 +44,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

@@ -1,6 +1,6 @@
 package com.yinhai.web;
 
-import com.yinhai.domain.User;
+import com.yinhai.entity.UserEntity;
 import com.yinhai.repository.UserRepository;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -29,7 +29,7 @@ public class UserController {
 
     @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value="/", method= RequestMethod.GET)
-    public List<User> getUserList() {
+    public List<UserEntity> getUserList() {
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
 
@@ -37,19 +37,19 @@ public class UserController {
     }
 
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
-    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
+    @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "UserEntity")
     @RequestMapping(value="/", method=RequestMethod.POST)
-    public String postUser(@ModelAttribute User user) {
+    public String postUser(@ModelAttribute UserEntity userEntity) {
         // 处理"/users/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
-        userRepository.save(user);
+        userRepository.save(userEntity);
         return "success";
     }
 
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public User getUser(@PathVariable String id) {
+    public UserEntity getUser(@PathVariable String id) {
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
         // url中的id可通过@PathVariable绑定到函数的参数中
         return userRepository.findOne(Long.valueOf(id));
@@ -58,13 +58,13 @@ public class UserController {
     @ApiOperation(value="更新用户详细信息", notes="根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long"),
-            @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
+            @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "UserEntity")
     })
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
-    public String putUser(@PathVariable String id, @ModelAttribute User user) {
+    public String putUser(@PathVariable String id, @ModelAttribute UserEntity userEntity) {
         // 处理"/users/{id}"的PUT请求，用来更新User信息
-        user.setId(Long.valueOf(id));
-        userRepository.save(user);
+        userEntity.setId(Long.valueOf(id));
+        userRepository.save(userEntity);
         return "success";
     }
 
