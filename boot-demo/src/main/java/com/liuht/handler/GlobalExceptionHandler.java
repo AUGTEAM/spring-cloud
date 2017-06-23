@@ -1,4 +1,4 @@
-package com.yinhai.handler;
+package com.liuht.handler;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Desc <p>Controller 统一异常处理</p>
- * Package com.yinhai.handler
+ * Package com.liuht.handler
  * Created by 刘惠涛 on 2017/5/5.
  */
 @ControllerAdvice

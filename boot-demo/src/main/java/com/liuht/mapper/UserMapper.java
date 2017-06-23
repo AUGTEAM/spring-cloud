@@ -1,10 +1,10 @@
-package com.yinhai.mapper;
+package com.liuht.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.mapper
+ * Package com.liuht.mapper
  * Created by liuht on 2017/6/23.
  */
 @Mapper

@@ -1,4 +1,4 @@
-package com.yinhai;
+package com.liuht;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.yinhai.config;
+package com.liuht.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Desc <p>Swagger2配置类</p>
- * Package com.yinhai
+ * Package com.liuht
  * Created by 刘惠涛 on 2017/5/5.
  */
 @Configuration
@@ -23,7 +23,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.yinhai.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.liuht.web"))
                 .paths(PathSelectors.any())
                 .build();
     }

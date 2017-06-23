@@ -1,12 +1,12 @@
-package com.yinhai.service;
+package com.liuht.service;
 
-import com.yinhai.entity.UserEntity;
+import com.liuht.entity.UserEntity;
 
 import java.util.List;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.service
+ * Package com.liuht.service
  * Created by liuht on 2017/6/23.
  */
 public interface UserService {

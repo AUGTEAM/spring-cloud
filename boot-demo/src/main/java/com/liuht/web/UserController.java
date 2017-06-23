@@ -1,7 +1,7 @@
-package com.yinhai.web;
+package com.liuht.web;
 
-import com.yinhai.entity.UserEntity;
-import com.yinhai.service.UserService;
+import com.liuht.entity.UserEntity;
+import com.liuht.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Desc <p>Controller demo</p>
  * <p>Swagger demo</p>
- * Package com.yinhai.web
+ * Package com.liuht.web
  * Created by 刘惠涛 on 2017/5/5.
  */
 @RestController

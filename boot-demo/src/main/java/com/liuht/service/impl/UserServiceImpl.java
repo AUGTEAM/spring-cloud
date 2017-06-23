@@ -1,8 +1,8 @@
-package com.yinhai.service.impl;
+package com.liuht.service.impl;
 
-import com.yinhai.entity.UserEntity;
-import com.yinhai.mapper.UserMapper;
-import com.yinhai.service.UserService;
+import com.liuht.entity.UserEntity;
+import com.liuht.mapper.UserMapper;
+import com.liuht.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.service.impl
+ * Package com.liuht.service.impl
  * Created by liuht on 2017/6/23.
  */
 @Service

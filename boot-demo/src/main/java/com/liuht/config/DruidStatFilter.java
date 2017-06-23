@@ -1,4 +1,4 @@
-package com.yinhai.config;
+package com.liuht.config;
 
 import com.alibaba.druid.support.http.WebStatFilter;
 
@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebInitParam;
 
 /**
  * Desc <p>Druid的StatFilter</p>
- * Package com.yinhai.config
+ * Package com.liuht.config
  * Created by liuht on 2017/6/16.
  */
 @WebFilter(filterName="druidWebStatFilter",urlPatterns="/*",

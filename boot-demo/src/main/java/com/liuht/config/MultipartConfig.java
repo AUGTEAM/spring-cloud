@@ -1,4 +1,4 @@
-package com.yinhai.config;
+package com.liuht.config;
 
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import javax.servlet.MultipartConfigElement;
 
 /**
  * Desc <p>上传文件的配置</p>
- * Package com.yinhai.config
+ * Package com.liuht.config
  * Created by liuht on 2017/6/16.
  */
 @Configuration

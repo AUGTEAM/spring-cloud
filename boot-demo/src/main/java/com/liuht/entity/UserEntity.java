@@ -1,8 +1,8 @@
-package com.yinhai.entity;
+package com.liuht.entity;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.entity
+ * Package com.liuht.entity
  * Created by 刘惠涛 on 2017/5/5.
  */
 public class UserEntity {

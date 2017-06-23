@@ -1,4 +1,4 @@
-package com.yinhai;
+package com.liuht;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * Desc <p></p>
- * Package com.yinhai
+ * Package com.liuht
  * Created by 刘惠涛 on 2017/5/5.
  */
 @RunWith(SpringRunner.class)

@@ -1,16 +1,15 @@
-package com.yinhai.mq;
+package com.liuht.mq;
 
-import com.yinhai.config.AmqpConfig;
+import com.liuht.config.AmqpConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 /**
  * Desc <p></p>
- * Package com.yinhai.mq
+ * Package com.liuht.mq
  * Created by liuht on 2017/6/8.
  */
 @Component
