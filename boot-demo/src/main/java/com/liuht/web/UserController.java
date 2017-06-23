@@ -1,6 +1,6 @@
 package com.liuht.web;
 
-import com.liuht.entity.UserEntity;
+import com.liuht.entity.User;
 import com.liuht.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 /**
  * Desc <p>Controller demo</p>
@@ -29,7 +30,7 @@ public class UserController {
 
     @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value="/", method= RequestMethod.GET)
-    public List<UserEntity> getUserList() {
+    public List<User> getUserList() {
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
 
@@ -37,9 +38,9 @@ public class UserController {
     }
 
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
-    @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "UserEntity")
+    @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "User")
     @RequestMapping(value="/", method=RequestMethod.POST)
-    public String postUser(@ModelAttribute UserEntity userEntity) {
+    public String postUser(@ModelAttribute User userEntity) {
         // 处理"/users/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
         userService.save(userEntity);
@@ -49,7 +50,7 @@ public class UserController {
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public UserEntity getUser(@PathVariable String id) {
+    public User getUser(@PathVariable String id) {
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
         // url中的id可通过@PathVariable绑定到函数的参数中
         return userService.findOne(Long.valueOf(id));
@@ -58,12 +59,11 @@ public class UserController {
     @ApiOperation(value="更新用户详细信息", notes="根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long"),
-            @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "UserEntity")
+            @ApiImplicitParam(name = "userEntity", value = "用户详细实体user", required = true, dataType = "User")
     })
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
-    public String putUser(@PathVariable String id, @ModelAttribute UserEntity userEntity) {
+    public String putUser(@PathVariable String id, @ModelAttribute User userEntity) {
         // 处理"/users/{id}"的PUT请求，用来更新User信息
-        userEntity.setId(Long.valueOf(id));
         userService.save(userEntity);
         return "success";
     }

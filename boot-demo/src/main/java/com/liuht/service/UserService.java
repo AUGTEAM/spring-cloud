@@ -1,6 +1,7 @@
 package com.liuht.service;
 
-import com.liuht.entity.UserEntity;
+
+import com.liuht.entity.User;
 
 import java.util.List;
 
@@ -11,11 +12,11 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<UserEntity> findAll();
+    List<User> findAll();
 
-    UserEntity findOne(Long id);
+    User findOne(Long id);
 
-    void save(UserEntity user);
+    void save(User user);
 
     void delete(Long id);
 }
