@@ -1,21 +1,13 @@
 package com.yinhai.entity;
 
-import javax.persistence.*;
-
 /**
  * Desc <p></p>
  * Package com.yinhai.entity
  * Created by 刘惠涛 on 2017/5/5.
  */
-@Entity()
-@Table(name = "user")
 public class UserEntity {
-    @Id
-    @GeneratedValue()
     private Long id;
-    @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
     private Integer age;
 
     public Long getId() {

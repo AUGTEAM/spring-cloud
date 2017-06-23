@@ -1,7 +1,7 @@
 package com.yinhai.web;
 
 import com.yinhai.entity.UserEntity;
-import com.yinhai.repository.UserRepository;
+import com.yinhai.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -20,11 +20,11 @@ import java.util.List;
 @RequestMapping(value="/users")
 public class UserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @ApiOperation(value="获取用户列表", notes="")
@@ -33,7 +33,7 @@ public class UserController {
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
 
-        return userRepository.findAll();
+        return userService.findAll();
     }
 
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
@@ -42,7 +42,7 @@ public class UserController {
     public String postUser(@ModelAttribute UserEntity userEntity) {
         // 处理"/users/"的POST请求，用来创建User
         // 除了@ModelAttribute绑定参数之外，还可以通过@RequestParam从页面中传递参数
-        userRepository.save(userEntity);
+        userService.save(userEntity);
         return "success";
     }
 
@@ -52,7 +52,7 @@ public class UserController {
     public UserEntity getUser(@PathVariable String id) {
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息
         // url中的id可通过@PathVariable绑定到函数的参数中
-        return userRepository.findOne(Long.valueOf(id));
+        return userService.findOne(Long.valueOf(id));
     }
 
     @ApiOperation(value="更新用户详细信息", notes="根据url的id来指定更新对象，并根据传过来的user信息来更新用户详细信息")
@@ -64,7 +64,7 @@ public class UserController {
     public String putUser(@PathVariable String id, @ModelAttribute UserEntity userEntity) {
         // 处理"/users/{id}"的PUT请求，用来更新User信息
         userEntity.setId(Long.valueOf(id));
-        userRepository.save(userEntity);
+        userService.save(userEntity);
         return "success";
     }
 
@@ -73,7 +73,7 @@ public class UserController {
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
     public String deleteUser(@PathVariable String id) {
         // 处理"/users/{id}"的DELETE请求，用来删除User
-        userRepository.delete(Long.valueOf(id));
+        userService.delete(Long.valueOf(id));
         return "success";
     }
 }
