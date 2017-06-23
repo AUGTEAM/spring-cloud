@@ -28,16 +28,18 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findOne(Long id) {
-        return null;
+        return userMapper.selectByPrimaryKey(id.intValue());
     }
 
     @Override
+    @Transactional
     public void save(User user) {
-
+        userMapper.insertSelective(user);
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
-
+        userMapper.deleteByPrimaryKey(id.intValue());
     }
 }
