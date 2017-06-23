@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuht.mapper.OnlineMapper">
+  <resultMap id="BaseResultMap" type="com.liuht.entity.Online">
+    <constructor>
+      <arg column="USER_ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="SESSIONID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LOGIN_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="LOGIN_IP" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.liuht.entity.Online">
+    insert into hy_online (USER_ID, SESSIONID, LOGIN_TIME, 
+      LOGIN_IP)
+    values (#{userId,jdbcType=INTEGER}, #{sessionid,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP}, 
+      #{loginIp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liuht.entity.Online">
+    insert into hy_online
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="sessionid != null">
+        SESSIONID,
+      </if>
+      <if test="loginTime != null">
+        LOGIN_TIME,
+      </if>
+      <if test="loginIp != null">
+        LOGIN_IP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="sessionid != null">
+        #{sessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginIp != null">
+        #{loginIp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
