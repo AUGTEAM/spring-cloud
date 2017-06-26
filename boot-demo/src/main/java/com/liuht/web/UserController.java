@@ -2,6 +2,7 @@ package com.liuht.web;
 
 import com.liuht.entity.User;
 import com.liuht.service.UserService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -19,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value="/users")
+@Api(value = "用户管理", description = "...")
 public class UserController {
 
     private final UserService userService;
