@@ -7,8 +7,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>boot-demo</name>
-	<description>boot-demo</description>
+	<name>ecadmins</name>
+	<description>ecadmins spring boot版本</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
