@@ -16,7 +16,7 @@
 # modules 介绍
 ## boot-demo spring boot简单案例
 ##### 包括模板引擎、datasource、JPA、swagger2的使用。轻松简单的构建web应用
-## cloud-config 配置服务器
+## cloud-config 配置服务器 有多种实现 git zk local 可以通过spring cloud bus动态修改配置
 ##### 管理git上的配置文件
 ##### 管理本地配置文件
 ##### 将自身（配置服务器）注册到注册中心，供应用通过注册中心拉取配置，也可实现配置服务器的高可用
